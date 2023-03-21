@@ -1,0 +1,45 @@
+<html xmlns:th="https://www.thymeleaf.org"
+  th:replace="~{fragments/layout :: layout (~{::body},'orders')}">
+
+<head>
+  <meta charset="UTF-8"/>
+  <link th:rel="stylesheet" th:href="@{assets/bootstrap-select-1.13.9/dist/css/bootstrap-select.css}"/>
+  <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.3/css/bootstrap.min.css} "/>
+</head>
+
+<body>
+<div class="container">
+  <h2>
+    New Order
+  </h2>
+  <form th:object="${order}" th:action="@{/orders/new}" class="form-horizontal" method="post">
+<!--    <input type="hidden" name="id" th:value="*{orderId}" />-->
+    <div class="form-group has-feedback">
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Customer</label>
+        <div class="col-sm-10">
+          <span th:text="${order.getCustomer().getFirstName() + ' ' + order.getCustomer().getLastName()}" />
+        </div>
+      </div>
+    </div>
+    <input hidden="hidden" type="text" th:field="*{customer}" th:value="${order.customer}"/><br/>
+    <div class="form-group">
+      <label><b>Choose products</b></label>
+      <div class="form-group form-check" th:each="product : ${selectedItems}">
+        <input class="form-check-input" type="checkbox" name="products" th:value="${product.getProductId()} ">
+        <label class="form-check-label" th:text="${product.getName() + ' - ' + product.getPrice()}">
+        </label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button class="btn btn-primary" type="submit">Submit Order</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+</body>
+
+</html>
