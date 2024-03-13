@@ -1,7 +1,10 @@
-package com.rshu.mppz;
+package com.rshu.mppz.customer.controller;
 
 //import javax.xml.bind.annotation.XmlElement;
 //import javax.xml.bind.annotation.XmlRootElement;
+
+import com.rshu.mppz.customer.data.Customer;
+
 import java.util.ArrayList;
 import java.util.List;
 

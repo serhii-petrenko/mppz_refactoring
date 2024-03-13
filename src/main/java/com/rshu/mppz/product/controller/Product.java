@@ -1,4 +1,4 @@
-package com.rshu.mppz;
+package com.rshu.mppz.product.controller;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;

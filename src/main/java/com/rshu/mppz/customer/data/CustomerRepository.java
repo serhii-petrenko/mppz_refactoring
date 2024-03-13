@@ -1,4 +1,4 @@
-package com.rshu.mppz;
+package com.rshu.mppz.customer.data;
 
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.domain.Page;

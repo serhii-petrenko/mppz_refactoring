@@ -1,4 +1,6 @@
-package com.rshu.mppz;
+package com.rshu.mppz.order.data;
+
+import com.rshu.mppz.customer.data.Customer;
 
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.domain.Page;
@@ -9,14 +11,18 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collection;
-import java.util.List;
 
-public interface ProductRepository extends Repository<Product, Integer> {
-
-	@Transactional(readOnly = true)
-	List<Product> findAll() throws DataAccessException;
+public interface OrderRepository extends Repository<Order, Integer> {
 
 	@Transactional(readOnly = true)
-	Page<Product> findAll(Pageable pageable) throws DataAccessException;
+	Collection<Order> findAll() throws DataAccessException;
 
+	@Transactional(readOnly = true)
+	Page<Customer> findAll(Pageable pageable) throws DataAccessException;
+
+	@Query("SELECT order FROM Order order WHERE order.orderId =:id")
+	@Transactional(readOnly = true)
+	Order findById(@Param("id") Integer id);
+
+    void save(Order order);
 }
