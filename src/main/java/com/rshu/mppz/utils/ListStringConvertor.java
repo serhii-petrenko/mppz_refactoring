@@ -1,4 +1,4 @@
-package com.rshu.mppz;
+package com.rshu.mppz.utils;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.core.JsonProcessingException;
