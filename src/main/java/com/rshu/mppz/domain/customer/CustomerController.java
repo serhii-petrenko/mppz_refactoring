@@ -1,5 +1,8 @@
 
-package com.rshu.mppz;
+package com.rshu.mppz.domain.customer;
+
+import com.rshu.mppz.data.customer.CustomerRepository;
+import com.rshu.mppz.data.customer.model.Customer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

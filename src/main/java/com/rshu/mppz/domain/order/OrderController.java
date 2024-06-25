@@ -1,5 +1,12 @@
 
-package com.rshu.mppz;
+package com.rshu.mppz.domain.order;
+
+import com.rshu.mppz.data.order.model.Order;
+import com.rshu.mppz.data.order.OrderRepository;
+import com.rshu.mppz.data.product.model.Product;
+import com.rshu.mppz.data.product.ProductRepository;
+import com.rshu.mppz.data.customer.CustomerRepository;
+import com.rshu.mppz.data.customer.model.Customer;
 
 import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
